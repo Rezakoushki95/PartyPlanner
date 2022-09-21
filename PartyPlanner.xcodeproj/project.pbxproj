@@ -13,6 +13,7 @@
 		F5515E7E28D7398D00D01A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5515E7C28D7398D00D01A4C /* Main.storyboard */; };
 		F5515E8028D7399100D01A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5515E7F28D7399100D01A4C /* Assets.xcassets */; };
 		F5515E8328D7399100D01A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5515E8128D7399100D01A4C /* LaunchScreen.storyboard */; };
+		F5A0EFBF28DAD94900EA94A4 /* ItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A0EFBE28DAD94900EA94A4 /* ItemDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F5515E7F28D7399100D01A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5515E8228D7399100D01A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5515E8428D7399100D01A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5A0EFBE28DAD94900EA94A4 /* ItemDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F5515E7828D7398D00D01A4C /* SceneDelegate.swift */,
 				F5515E7A28D7398D00D01A4C /* ViewController.swift */,
 				F5515E7C28D7398D00D01A4C /* Main.storyboard */,
+				F5A0EFBE28DAD94900EA94A4 /* ItemDetailTableViewController.swift */,
 				F5515E7F28D7399100D01A4C /* Assets.xcassets */,
 				F5515E8128D7399100D01A4C /* LaunchScreen.storyboard */,
 				F5515E8428D7399100D01A4C /* Info.plist */,
@@ -141,6 +144,7 @@
 				F5515E7B28D7398D00D01A4C /* ViewController.swift in Sources */,
 				F5515E7728D7398D00D01A4C /* AppDelegate.swift in Sources */,
 				F5515E7928D7398D00D01A4C /* SceneDelegate.swift in Sources */,
+				F5A0EFBF28DAD94900EA94A4 /* ItemDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -120,13 +120,20 @@
                                 <action selector="cancelBarButtonPressed:" destination="sUV-d2-tdW" id="WzK-jg-uOR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="avg-Ni-mw4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="avg-Ni-mw4">
+                            <connections>
+                                <segue destination="ENV-xR-Aho" kind="unwind" unwindAction="unwindFromItemDetailWithSegue:" id="NOG-pC-HVL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="partyItemField" destination="NGm-iC-KaZ" id="lAW-Re-MEB"/>
+                        <outlet property="personResponsibleField" destination="GnX-CN-pKx" id="K4G-Ny-hjw"/>
                         <outlet property="saveBarButton" destination="avg-Ni-mw4" id="zjU-6L-6xJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X0G-JX-Rx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ENV-xR-Aho" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2911" y="124"/>
         </scene>

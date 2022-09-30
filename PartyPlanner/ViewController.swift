@@ -39,10 +39,38 @@ class ViewController: UIViewController {
 		"Forks and Knives",
 		"Cups"
 	]
+	
+	var personResponsible = [String]()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.delegate = self
 		tableView.dataSource = self
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "EditItemDetail" {
+			let destination = segue.destination as! ItemDetailViewController
+			let selectedIndexPath = tableView.indexPathForSelectedRow!
+			destination.partyItem = partyItems[selectedIndexPath.row]
+		} else {
+			if let selectedIndexPath = tableView.indexPathForSelectedRow {
+				tableView.deselectRow(at: selectedIndexPath, animated: false)
+			}
+		}
+	}
+	
+	@IBAction func unwindFromItemDetail(segue: UIStoryboardSegue) {
+		let source = segue.source as! ItemDetailViewController
+		if let selectedIndexPath = tableView.indexPathForSelectedRow {
+			partyItems[selectedIndexPath.row] = source.partyItem
+			tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+		} else {
+			let newIndexPath = IndexPath(row: partyItems.count, section: 0)
+			partyItems.append(source.partyItem)
+			tableView.insertRows(at: [newIndexPath], with: .automatic)
+			tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
+		}
 	}
 	
 }

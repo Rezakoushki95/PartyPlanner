@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var addBarButton: UIBarButtonItem!
 	
 	var partyItems = [
 		"Potato Chips",
@@ -73,9 +74,21 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func editBarButtonPressed(_ sender: UIBarButtonItem) {
+		if tableView.isEditing {
+			tableView.setEditing(false, animated: true)
+			addBarButton.isEnabled = true
+			sender.title = "Edit"
+		} else {
+			tableView.setEditing(true, animated: true)
+			addBarButton.isEnabled = false
+			sender.title = "Done"
+		}
+	}
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		print("*** numberOfRowsInSection was just called and there are \(partyItems.count) rows in the tv")
 		return partyItems.count
@@ -86,6 +99,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.textLabel?.text = partyItems[indexPath.row]
 		print(">>> Dequeing the table view cell for indexPath.row = \(indexPath.row) where the cell contain item \(partyItems[indexPath.row])")
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			partyItems.remove(at: indexPath.row)
+			tableView.deleteRows(at: [indexPath], with: .fade)
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+		let itemToMove = partyItems[sourceIndexPath.row]
+		partyItems.remove(at: sourceIndexPath.row)
+		partyItems.insert(itemToMove, at: destinationIndexPath.row)
 	}
 	
 }
